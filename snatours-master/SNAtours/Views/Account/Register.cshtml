@@ -1,0 +1,73 @@
+﻿@model SNAtours.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<section class="hgroup">
+    <h1>Register</h1>
+    <ul class="breadcrumb pull-right">
+        <li><a href="index.html">Home</a> </li>
+        <li class="active">Register</li>
+    </ul>
+</section>
+
+<div class="row">
+    <div class="col-sm-3 col-md-3">
+       
+
+    </div>
+
+        <div class="col-sm-6 col-md-6">
+            <div class="signup">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+        @Html.AntiForgeryToken()
+        <div class="social_sign">
+            <h3>Don't have a site account yet?</h3>
+            <a><i class="fa fa-user"></i></a>
+        </div>
+        <p class="sign_title">Create one now, it's fast &amp; free!</p>
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email address" })
+
+
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+
+
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirm password" })
+
+                <div class="checkbox">
+                    <label class="">
+                        <input name="checkboxes" value="Option one" type="checkbox">
+                        I agree to the <a href="#">terms and conditions</a>
+                    </label>
+                </div>
+
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    <input type="submit" class="btn btn-success btn-lg" value="Create your account" />
+
+
+
+        }
+
+            </div>
+
+        </div>
+
+    <div class="col-sm-3 col-md-3">
+
+
+    </div>
+</div>
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

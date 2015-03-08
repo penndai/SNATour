@@ -1,0 +1,70 @@
+﻿@using SNAtours.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    //Layout = "~/Views/Shared/_Admin.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="row">
+                    <div class="col-lg-2"></div>
+                    <div class="col-lg-8">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email address" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+                        <div class="checkbox">
+                            <label class="">
+                                @Html.CheckBoxFor(m => m.RememberMe) Remember me
+                            </label>
+                        </div>
+                        @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>*@
+
+                        <input type="submit" value="Log in" class="btn btn-primary" />
+                        <p>
+                            @Html.ActionLink("Register as a new user", "Register")
+                        </p>
+                    </div>                
+                </div>               
+            }
+        </div>
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new SNAtours.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h4>Amazing China 10 days</h4></div>
+            <div class="panel-body">
+                Beijing,Shanghai,Hangzhou,Suzhou 10 Days
+                <br><br>
+                <table class="table table-striped">
+                    <thead>
+                        <tr><th>Tour Fee</th><th></th><th></th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Adult</td><td>$900</td><td>1</td><td>$900</td></tr>
+                        <tr><td>Children</td><td>$800</td><td>1</td><td>$800</td></tr>
+                        <tr><td colspan="3">Total:</td><td>$1700</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

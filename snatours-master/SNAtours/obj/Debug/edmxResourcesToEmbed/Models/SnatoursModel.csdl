@@ -1,0 +1,552 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SnatoursContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="Models.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Models.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Models.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Models.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Models.AspNetUser" />
+    <EntitySet Name="Carts" EntityType="Models.Cart" />
+    <EntitySet Name="Categories" EntityType="Models.Category" />
+    <EntitySet Name="Cities" EntityType="Models.City" />
+    <EntitySet Name="Countries" EntityType="Models.Country" />
+    <EntitySet Name="Hotels" EntityType="Models.Hotel" />
+    <EntitySet Name="Insurances" EntityType="Models.Insurance" />
+    <EntitySet Name="InsuranceTypes" EntityType="Models.InsuranceType" />
+    <EntitySet Name="Orders" EntityType="Models.Order" />
+    <EntitySet Name="Order_Line" EntityType="Models.Order_Line" />
+    <EntitySet Name="Products" EntityType="Models.Product" />
+    <EntitySet Name="Product_Category_Mapping" EntityType="Models.Product_Category_Mapping" />
+    <EntitySet Name="RoomTypes" EntityType="Models.RoomType" />
+    <EntitySet Name="sysdiagrams" EntityType="Models.sysdiagram" />
+    <EntitySet Name="Visas" EntityType="Models.Visa" />
+    <EntitySet Name="VisaTypes" EntityType="Models.VisaType" />
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Models.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaim" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Models.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogin" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_AspNetUsers" Association="Models.FK_Order_AspNetUsers">
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Product" Association="Models.FK_Cart_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Carts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category_Mapping_Category" Association="Models.FK_Product_Category_Mapping_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Product_Category_Mapping" EntitySet="Product_Category_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_Country" Association="Models.FK_City_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hotel_City" Association="Models.FK_Hotel_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Hotel" EntitySet="Hotels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visa_Country" Association="Models.FK_Visa_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Visa" EntitySet="Visas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Insurance_InsuranceType" Association="Models.FK_Insurance_InsuranceType">
+      <End Role="InsuranceType" EntitySet="InsuranceTypes" />
+      <End Role="Insurance" EntitySet="Insurances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Insurance" Association="Models.FK_Product_Insurance">
+      <End Role="Insurance" EntitySet="Insurances" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Line_Order" Association="Models.FK_Order_Line_Order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order_Line" EntitySet="Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_RoomType" Association="Models.FK_Order_RoomType">
+      <End Role="RoomType" EntitySet="RoomTypes" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Line_Product" Association="Models.FK_Order_Line_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order_Line" EntitySet="Order_Line" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category_Mapping_Product" Association="Models.FK_Product_Category_Mapping_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Product_Category_Mapping" EntitySet="Product_Category_Mapping" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Visa" Association="Models.FK_Product_Visa">
+      <End Role="Visa" EntitySet="Visas" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visa_VisaType" Association="Models.FK_Visa_VisaType">
+      <End Role="VisaType" EntitySet="VisaTypes" />
+      <End Role="Visa" EntitySet="Visas" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Models.AspNetUserRoles">
+      <End Role="AspNetRole" EntitySet="AspNetRoles" />
+      <End Role="AspNetUser" EntitySet="AspNetUsers" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Models.AspNetUserRoles" FromRole="AspNetRole" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Models.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaim" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Models.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogin" ToRole="AspNetUser" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PassportNumber" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PassportExpiryDate" Type="DateTime" Precision="0" />
+    <Property Name="FilePath" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Models.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserClaim" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Models.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUser" ToRole="AspNetUserLogin" />
+    <NavigationProperty Name="Orders" Relationship="Models.FK_Order_AspNetUsers" FromRole="AspNetUser" ToRole="Order" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Models.AspNetUserRoles" FromRole="AspNetUser" ToRole="AspNetRole" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Product_Id" Type="Int32" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="EntryDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Product" Relationship="Models.FK_Cart_Product" FromRole="Cart" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Product_Category_Mapping" Relationship="Models.FK_Product_Category_Mapping_Category" FromRole="Category" ToRole="Product_Category_Mapping" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Country_Id" Type="Int32" />
+    <NavigationProperty Name="Country" Relationship="Models.FK_City_Country" FromRole="City" ToRole="Country" />
+    <NavigationProperty Name="Hotels" Relationship="Models.FK_Hotel_City" FromRole="City" ToRole="Hotel" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cities" Relationship="Models.FK_City_Country" FromRole="Country" ToRole="City" />
+    <NavigationProperty Name="Visas" Relationship="Models.FK_Visa_Country" FromRole="Country" ToRole="Visa" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="Logo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WebsiteUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City" Relationship="Models.FK_Hotel_City" FromRole="Hotel" ToRole="City" />
+  </EntityType>
+  <EntityType Name="Insurance">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InsuranceTypeId" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="InsuranceType" Relationship="Models.FK_Insurance_InsuranceType" FromRole="Insurance" ToRole="InsuranceType" />
+    <NavigationProperty Name="Products" Relationship="Models.FK_Product_Insurance" FromRole="Insurance" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="InsuranceType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Insurances" Relationship="Models.FK_Insurance_InsuranceType" FromRole="InsuranceType" ToRole="Insurance" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Order_Status" Type="Boolean" />
+    <Property Name="Id_Related" Type="Int32" />
+    <Property Name="AspNetUsersId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="RoomTypeId" Type="Int32" />
+    <NavigationProperty Name="AspNetUser" Relationship="Models.FK_Order_AspNetUsers" FromRole="Order" ToRole="AspNetUser" />
+    <NavigationProperty Name="Order_Line" Relationship="Models.FK_Order_Line_Order" FromRole="Order" ToRole="Order_Line" />
+    <NavigationProperty Name="RoomType" Relationship="Models.FK_Order_RoomType" FromRole="Order" ToRole="RoomType" />
+  </EntityType>
+  <EntityType Name="Order_Line">
+    <Key>
+      <PropertyRef Name="Order_Id" />
+      <PropertyRef Name="Product_Id" />
+    </Key>
+    <Property Name="Order_Id" Type="Int32" Nullable="false" />
+    <Property Name="Product_Id" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="Order" Relationship="Models.FK_Order_Line_Order" FromRole="Order_Line" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="Models.FK_Order_Line_Product" FromRole="Order_Line" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VisaId" Type="Int32" />
+    <Property Name="VisaPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InsuranceId" Type="Int32" />
+    <Property Name="InsurancePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RouteName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DepartureCities" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsSurChargeCity" Type="Boolean" />
+    <Property Name="SurChargeCiteFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DepartureDates" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IshightSeasons" Type="Boolean" />
+    <Property Name="SurChargeDateFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IsIncludedTourTipping" Type="Boolean" />
+    <Property Name="TourTipping" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TourDays" Type="Int32" />
+    <Property Name="Capacity" Type="Int32" />
+    <Property Name="Booked_Qty" Type="Int32" />
+    <Property Name="FullStatus" Type="Boolean" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IncludedCities" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Image1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image5" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image6" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image7" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image8" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image9" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image10" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Carts" Relationship="Models.FK_Cart_Product" FromRole="Product" ToRole="Cart" />
+    <NavigationProperty Name="Insurance" Relationship="Models.FK_Product_Insurance" FromRole="Product" ToRole="Insurance" />
+    <NavigationProperty Name="Order_Line" Relationship="Models.FK_Order_Line_Product" FromRole="Product" ToRole="Order_Line" />
+    <NavigationProperty Name="Product_Category_Mapping" Relationship="Models.FK_Product_Category_Mapping_Product" FromRole="Product" ToRole="Product_Category_Mapping" />
+    <NavigationProperty Name="Visa" Relationship="Models.FK_Product_Visa" FromRole="Product" ToRole="Visa" />
+  </EntityType>
+  <EntityType Name="Product_Category_Mapping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="IsPromotedProduct" Type="Boolean" />
+    <Property Name="PromotedPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Category" Relationship="Models.FK_Product_Category_Mapping_Category" FromRole="Product_Category_Mapping" ToRole="Category" />
+    <NavigationProperty Name="Product" Relationship="Models.FK_Product_Category_Mapping_Product" FromRole="Product_Category_Mapping" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="RoomType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Models.FK_Order_RoomType" FromRole="RoomType" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Visa">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="VisaTypeId" Type="Int32" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Country" Relationship="Models.FK_Visa_Country" FromRole="Visa" ToRole="Country" />
+    <NavigationProperty Name="Products" Relationship="Models.FK_Product_Visa" FromRole="Visa" ToRole="Product" />
+    <NavigationProperty Name="VisaType" Relationship="Models.FK_Visa_VisaType" FromRole="Visa" ToRole="VisaType" />
+  </EntityType>
+  <EntityType Name="VisaType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Visas" Relationship="Models.FK_Visa_VisaType" FromRole="VisaType" ToRole="Visa" />
+  </EntityType>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Type="Models.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Models.AspNetUserClaim" Role="AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Type="Models.AspNetUser" Role="AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="Models.AspNetUserLogin" Role="AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_AspNetUsers">
+    <End Type="Models.AspNetUser" Role="AspNetUser" Multiplicity="0..1" />
+    <End Type="Models.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="AspNetUsersId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Product">
+    <End Type="Models.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="Models.Cart" Role="Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category_Mapping_Category">
+    <End Type="Models.Category" Role="Category" Multiplicity="0..1" />
+    <End Type="Models.Product_Category_Mapping" Role="Product_Category_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_Category_Mapping">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_Country">
+    <End Type="Models.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="Models.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Country_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hotel_City">
+    <End Type="Models.City" Role="City" Multiplicity="0..1" />
+    <End Type="Models.Hotel" Role="Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visa_Country">
+    <End Type="Models.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="Models.Visa" Role="Visa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visa">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Insurance_InsuranceType">
+    <End Type="Models.InsuranceType" Role="InsuranceType" Multiplicity="0..1" />
+    <End Type="Models.Insurance" Role="Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Insurance">
+        <PropertyRef Name="InsuranceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Insurance">
+    <End Type="Models.Insurance" Role="Insurance" Multiplicity="0..1" />
+    <End Type="Models.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Insurance">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="InsuranceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Line_Order">
+    <End Type="Models.Order" Role="Order" Multiplicity="1" />
+    <End Type="Models.Order_Line" Role="Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_Line">
+        <PropertyRef Name="Order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_RoomType">
+    <End Type="Models.RoomType" Role="RoomType" Multiplicity="0..1" />
+    <End Type="Models.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="RoomTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Line_Product">
+    <End Type="Models.Product" Role="Product" Multiplicity="1" />
+    <End Type="Models.Order_Line" Role="Order_Line" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order_Line">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category_Mapping_Product">
+    <End Type="Models.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="Models.Product_Category_Mapping" Role="Product_Category_Mapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product_Category_Mapping">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Visa">
+    <End Type="Models.Visa" Role="Visa" Multiplicity="0..1" />
+    <End Type="Models.Product" Role="Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visa">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="VisaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visa_VisaType">
+    <End Type="Models.VisaType" Role="VisaType" Multiplicity="0..1" />
+    <End Type="Models.Visa" Role="Visa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisaType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Visa">
+        <PropertyRef Name="VisaTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Type="Models.AspNetRole" Role="AspNetRole" Multiplicity="*" />
+    <End Type="Models.AspNetUser" Role="AspNetUser" Multiplicity="*" />
+  </Association>
+</Schema>

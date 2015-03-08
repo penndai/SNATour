@@ -1,0 +1,16 @@
+1. Administrator Role login
+Manage All Users 
+Manage role
+Manage right
+release product
+
+
+
+2. Sales Role Login
+release product
+
+
+3. User Role Login
+Manage the own field
+check order info and modify it
+email confirm

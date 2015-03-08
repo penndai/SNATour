@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E86A8DC4-5E2C-440A-887F-131BA2C7E764}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SNAtours</RootNamespace>
+    <AssemblyName>SNAtours</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\penn\Documents\Visual Studio 2013\Projects\WebApplication1\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.1.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.0\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.0\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.0\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AspNetRole.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUser.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserClaim.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AspNetUserLogin.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Country.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C__MigrationHistory.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Hotel.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Insurance.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InsuranceType.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Order_Line.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Product_Category_Mapping.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoleViewModel.cs" />
+    <Compile Include="Models\RoomType.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SnatoursModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnatoursModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SnatoursModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SnatoursModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SnatoursModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visa.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VisaType.cs">
+      <DependentUpon>SnatoursModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\1.jpg" />
+    <Content Include="Content\images\1a.jpg" />
+    <Content Include="Content\images\1as.jpg" />
+    <Content Include="Content\images\1b.jpg" />
+    <Content Include="Content\images\2.jpg" />
+    <Content Include="Content\images\2a.jpg" />
+    <Content Include="Content\images\2as.jpg" />
+    <Content Include="Content\images\2b.jpg" />
+    <Content Include="Content\images\3.jpg" />
+    <Content Include="Content\images\3a.jpg" />
+    <Content Include="Content\images\3as.jpg" />
+    <Content Include="Content\images\3b.jpg" />
+    <Content Include="Content\images\404.jpg" />
+    <Content Include="Content\images\4a.jpg" />
+    <Content Include="Content\images\4as.jpg" />
+    <Content Include="Content\images\4b.jpg" />
+    <Content Include="Content\images\about_us.jpg" />
+    <Content Include="Content\images\backgrounds\wild_oliva.png" />
+    <Content Include="Content\images\backgrounds\wild_oliva_%402X.png" />
+    <Content Include="Content\images\backgrounds\wild_oliva_blue_dark.png" />
+    <Content Include="Content\images\backgrounds\wild_oliva_blue_light.png" />
+    <Content Include="Content\images\backgrounds\wild_oliva_dark.png" />
+    <Content Include="Content\images\backgrounds\wild_oliva_light.png" />
+    <Content Include="Content\images\backgrounds\wild_oliva_light_head.png" />
+    <Content Include="Content\images\clients\bbpress.jpg" />
+    <Content Include="Content\images\clients\jquery.jpg" />
+    <Content Include="Content\images\clients\microlancer.jpg" />
+    <Content Include="Content\images\clients\wordpress.jpg" />
+    <Content Include="Content\images\clients\wpml.jpg" />
+    <Content Include="Content\images\git.png" />
+    <Content Include="Content\images\less.png" />
+    <Content Include="Content\images\portfolio\a1.jpg" />
+    <Content Include="Content\images\portfolio\a2.jpg" />
+    <Content Include="Content\images\portfolio\a3.jpg" />
+    <Content Include="Content\images\portfolio\a4.jpg" />
+    <Content Include="Content\images\portfolio\a5.jpg" />
+    <Content Include="Content\images\portfolio\a6.jpg" />
+    <Content Include="Content\images\portfolio\b1.jpg" />
+    <Content Include="Content\images\portfolio\b2.jpg" />
+    <Content Include="Content\images\portfolio\b3.jpg" />
+    <Content Include="Content\images\portfolio\b4.jpg" />
+    <Content Include="Content\images\portfolio\b5.jpg" />
+    <Content Include="Content\images\portfolio\item\1.jpg" />
+    <Content Include="Content\images\portfolio\item\10.jpg" />
+    <Content Include="Content\images\portfolio\item\11.jpg" />
+    <Content Include="Content\images\portfolio\item\2.jpg" />
+    <Content Include="Content\images\portfolio\item\3.jpg" />
+    <Content Include="Content\images\portfolio\item\4.jpg" />
+    <Content Include="Content\images\portfolio\item\5.jpg" />
+    <Content Include="Content\images\portfolio\item\6.jpg" />
+    <Content Include="Content\images\portfolio\item\7.jpg" />
+    <Content Include="Content\images\portfolio\item\8.jpg" />
+    <Content Include="Content\images\portfolio\item\9.jpg" />
+    <Content Include="Content\images\portfolio\p1.jpg" />
+    <Content Include="Content\images\portfolio\p3.jpg" />
+    <Content Include="Content\images\portfolio\p4.jpg" />
+    <Content Include="Content\images\portfolio\rating_stars.png" />
+    <Content Include="Content\images\portfolio\t1.jpg" />
+    <Content Include="Content\images\portfolio\t2.jpg" />
+    <Content Include="Content\images\portfolio\t3.jpg" />
+    <Content Include="Content\images\portfolio\t4.jpg" />
+    <Content Include="Content\images\portfolio\t5.jpg" />
+    <Content Include="Content\images\responsive.png" />
+    <Content Include="Content\images\restart_logo.png" />
+    <Content Include="Content\images\s1.jpg" />
+    <Content Include="Content\images\s2.jpg" />
+    <Content Include="Content\images\s3.jpg" />
+    <Content Include="Content\images\services.jpg" />
+    <Content Include="Content\images\serv_1.jpg" />
+    <Content Include="Content\images\serv_2.jpg" />
+    <Content Include="Content\images\serv_3.jpg" />
+    <Content Include="Content\images\serv_4.jpg" />
+    <Content Include="Content\images\serv_5.jpg" />
+    <Content Include="Content\images\serv_6.jpg" />
+    <Content Include="Content\images\serv_7.jpg" />
+    <Content Include="Content\images\serv_8.jpg" />
+    <Content Include="Content\images\star.png" />
+    <Content Include="Content\images\ui.totop.png" />
+    <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\CityPackages\Beijing_forbiddencity.jpg" />
+    <Content Include="images\CityPackages\Beijing_forbiddencity_2.jpg" />
+    <Content Include="images\CityPackages\Beijing_forbiddencity_3.jpg" />
+    <Content Include="images\CityPackages\Beijing_greatwall.jpg" />
+    <Content Include="images\CityPackages\Beijing_olympicsite.jpg" />
+    <Content Include="images\CityPackages\Beijing_tiananmensquare.jpg" />
+    <Content Include="images\CityPackages\BestofCambodia_idx.jpg" />
+    <Content Include="images\CityPackages\BestofCambodia_top.jpg" />
+    <Content Include="images\CityPackages\BestofSouth_idx.jpg" />
+    <Content Include="images\CityPackages\BestofSouth_top.jpg" />
+    <Content Include="images\CityPackages\BestofVietnamCambodia_idx.jpg" />
+    <Content Include="images\CityPackages\BestofVietnam_idx.jpg" />
+    <Content Include="images\CityPackages\BestVietnamCambodia_top.jpg" />
+    <Content Include="images\CityPackages\Chengdu_buddha.jpg" />
+    <Content Include="images\CityPackages\Chengdu_panda_idx.jpg" />
+    <Content Include="images\CityPackages\CityPackage_Beijing1.jpg" />
+    <Content Include="images\CityPackages\CityPackage_Beijing2.jpg" />
+    <Content Include="images\CityPackages\CityPackage_Beijing3.jpg" />
+    <Content Include="images\CityPackages\CityPackage_BeijingShanghai_idx.jpg" />
+    <Content Include="images\CityPackages\Dunhuang.jpg" />
+    <Content Include="images\CityPackages\Dunhuang_idx.jpg" />
+    <Content Include="images\CityPackages\Guilin_liriver.jpg" />
+    <Content Include="images\CityPackages\Guilin_liriver_top.jpg" />
+    <Content Include="images\CityPackages\Guilin_liriver_top2.jpg" />
+    <Content Include="images\CityPackages\Guilin_longji.jpg" />
+    <Content Include="images\CityPackages\Hongkong_idx.jpg" />
+    <Content Include="images\CityPackages\Hongkong_victoriaharbor.jpg" />
+    <Content Include="images\CityPackages\Shanghai_pearloforient.jpg" />
+    <Content Include="images\CityPackages\Shanghai_pearloforienttower.jpg" />
+    <Content Include="images\CityPackages\Shanghai_thebund.jpg" />
+    <Content Include="images\CityPackages\Shanghai_thebundnightview.jpg" />
+    <Content Include="images\CityPackages\Tibet.jpg" />
+    <Content Include="images\CityPackages\Tibet_idx.jpg" />
+    <Content Include="images\CityPackages\Xian_ancientwall.jpg" />
+    <Content Include="images\CityPackages\Xian_ancientwalltop.jpg" />
+    <Content Include="images\CityPackages\Xian_terracotta.jpg" />
+    <Content Include="images\CityPackages\Xian_terracottatop.jpg" />
+    <Content Include="images\CityPackages\Yangtze.jpg" />
+    <Content Include="images\CityPackages\YangtzeRiverCruise_top.jpg" />
+    <Content Include="images\CityPackages\YangtzeRiver_cruise.jpg" />
+    <Content Include="images\CityPackages\Yangtze_idx.jpg" />
+    <Content Include="images\Highlights\6horse_idx.jpg" />
+    <Content Include="images\Highlights\ali.jpg" />
+    <Content Include="images\Highlights\beihaipark.jpg" />
+    <Content Include="images\Highlights\bingmayong.jpg" />
+    <Content Include="images\Highlights\birdnest.jpg" />
+    <Content Include="images\Highlights\capitalmuseum.jpg" />
+    <Content Include="images\Highlights\changdu.jpg" />
+    <Content Include="images\Highlights\chengdu_leshanbuddha.jpg" />
+    <Content Include="images\Highlights\chengdu_panda.jpg" />
+    <Content Include="images\Highlights\citywall.jpg" />
+    <Content Include="images\Highlights\elephanthill.jpg" />
+    <Content Include="images\Highlights\fengdu.jpg" />
+    <Content Include="images\Highlights\forbidencity.jpg" />
+    <Content Include="images\Highlights\greatwall.jpg" />
+    <Content Include="images\Highlights\guilin-liriver.jpg" />
+    <Content Include="images\Highlights\guilin_elephanttrunkhill.jpg" />
+    <Content Include="images\Highlights\guilin_longji.jpg" />
+    <Content Include="images\Highlights\hl_agra_agrafort.jpg" />
+    <Content Include="images\Highlights\hl_agra_fatehpursikri.jpg" />
+    <Content Include="images\Highlights\hl_agra_tajmahal.jpg" />
+    <Content Include="images\Highlights\hl_delhi_humayunstomb.jpg" />
+    <Content Include="images\Highlights\hl_delhi_jamamasjid.jpg" />
+    <Content Include="images\Highlights\hl_delhi_jantarmantar.jpg" />
+    <Content Include="images\Highlights\hl_delhi_olddelhi.jpg" />
+    <Content Include="images\Highlights\hl_delhi_qutubminar.jpg" />
+    <Content Include="images\Highlights\hl_delhi_rajpath.jpg" />
+    <Content Include="images\Highlights\hl_delhi_redfort.jpg" />
+    <Content Include="images\Highlights\hl_halongbay_catbaisland.jpg" />
+    <Content Include="images\Highlights\hl_halongbay_hangdaugo.jpg" />
+    <Content Include="images\Highlights\hl_halongbay_lanhabay.jpg" />
+    <Content Include="images\Highlights\hl_halongbay_sungsotcave.jpg" />
+    <Content Include="images\Highlights\hl_halongbay_titovisland.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_hoankiemlake.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_hochiminhhouse.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_hochiminhmausoleum.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_hochiminhmuseum.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_museumethnology.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_oldquarter.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_onepillarpagoda.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_templeliterature.jpg" />
+    <Content Include="images\Highlights\hl_hanoi_waterpuppet.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_benthanh.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_caodaimain.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_cuchitunnels.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_jadeemperorpagoda.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_notredamecathedral.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_reunificationpalace.jpg" />
+    <Content Include="images\Highlights\hl_hochiminh_warremnantsmuseum.jpg" />
+    <Content Include="images\Highlights\hl_hoian_bridge.jpg" />
+    <Content Include="images\Highlights\hl_hoian_centralmarket.jpg" />
+    <Content Include="images\Highlights\hl_hoian_phuockienassemblyhall.jpg" />
+    <Content Include="images\Highlights\hl_hoian_quancongtemple.jpg" />
+    <Content Include="images\Highlights\hl_hoian_sahuynh.jpg" />
+    <Content Include="images\Highlights\hl_hoian_thubonrivercruise.jpg" />
+    <Content Include="images\Highlights\hl_hoian_tranfamilyhome.jpg" />
+    <Content Include="images\Highlights\hl_siemreap_siemreapmuseum.jpg" />
+    <Content Include="images\Highlights\hl_siemreap_watthmei.jpg" />
+    <Content Include="images\Highlights\hl_tokyo_imperialpalace.jpg" />
+    <Content Include="images\Highlights\hl_tokyo_meiji.jpg" />
+    <Content Include="images\Highlights\hl_tokyo_sensoji.jpg" />
+    <Content Include="images\Highlights\hl_tokyo_skytree.jpg" />
+    <Content Include="images\Highlights\hl_tokyo_tokyotower.jpg" />
+    <Content Include="images\Highlights\hongcun_idx.jpg" />
+    <Content Include="images\Highlights\hongkong_giantbuddha.jpg" />
+    <Content Include="images\Highlights\hongkong_victoriaharbour.jpg" />
+    <Content Include="images\Highlights\hongkong_victoriapark.jpg" />
+    <Content Include="images\Highlights\huangpu_cruise.jpg" />
+    <Content Include="images\Highlights\huangriver_idx.jpg" />
+    <Content Include="images\Highlights\huangshan_idx.jpg" />
+    <Content Include="images\Highlights\hutong.jpg" />
+    <Content Include="images\Highlights\Japan_1.jpg" />
+    <Content Include="images\Highlights\Japan_2.jpg" />
+    <Content Include="images\Highlights\Japan_3.jpg" />
+    <Content Include="images\Highlights\Japan_4.jpg" />
+    <Content Include="images\Highlights\Japan_5.jpg" />
+    <Content Include="images\Highlights\Japan_6.jpg" />
+    <Content Include="images\Highlights\lamasi.jpg" />
+    <Content Include="images\Highlights\lhasa.jpg" />
+    <Content Include="images\Highlights\liriver.jpg" />
+    <Content Include="images\Highlights\longji.jpg" />
+    <Content Include="images\Highlights\LongmenGrottoes_idx.jpg" />
+    <Content Include="images\Highlights\mingtombs.jpg" />
+    <Content Include="images\Highlights\naqu.jpg" />
+    <Content Include="images\Highlights\Nyingchi.jpg" />
+    <Content Include="images\Highlights\Shanghai_jinmaotower.jpg" />
+    <Content Include="images\Highlights\Shanghai_musem.jpg" />
+    <Content Include="images\Highlights\shanghai_pearloforient.jpg" />
+    <Content Include="images\Highlights\Shanghai_thebund.jpg" />
+    <Content Include="images\Highlights\shanximuseum.jpg" />
+    <Content Include="images\Highlights\shaolintemple_idx.jpg" />
+    <Content Include="images\Highlights\Shigatse.jpg" />
+    <Content Include="images\Highlights\summerpalace.jpg" />
+    <Content Include="images\Highlights\templeofheaven.jpg" />
+    <Content Include="images\Highlights\tiananmen.jpg" />
+    <Content Include="images\Highlights\xianmuseum.jpg" />
+    <Content Include="images\Highlights\yangtzecruise_idx.jpg" />
+    <Content Include="images\Highlights\yangze_river.jpg" />
+    <Content Include="images\Ourdeal_logo.png" />
+    <Content Include="images\Scoopon-logo.png" />
+    <Content Include="images\slide-1.jpg" />
+    <Content Include="images\slide-2.jpg" />
+    <Content Include="images\slide-3.jpg" />
+    <Content Include="images\slide-4.jpg" />
+    <Content Include="images\slide-5.jpg" />
+    <Content Include="images\slide-6.jpg" />
+    <Content Include="images\snatours_logo.jpeg" />
+    <Content Include="images\snatours_logo.png" />
+    <Content Include="images\tvsn_au.png" />
+    <Content Include="images\twitterfeed.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\font-awesome\less\core.less" />
+    <Content Include="fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="fonts\font-awesome\less\icons.less" />
+    <Content Include="fonts\font-awesome\less\larger.less" />
+    <Content Include="fonts\font-awesome\less\list.less" />
+    <Content Include="fonts\font-awesome\less\mixins.less" />
+    <Content Include="fonts\font-awesome\less\path.less" />
+    <Content Include="fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\font-awesome\less\spinning.less" />
+    <Content Include="fonts\font-awesome\less\stacked.less" />
+    <Content Include="fonts\font-awesome\less\variables.less" />
+    <Content Include="fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\font-awesome\scss\_core.scss" />
+    <Content Include="fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="fonts\font-awesome\scss\_list.scss" />
+    <Content Include="fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="fonts\font-awesome\scss\_path.scss" />
+    <Content Include="fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\font-awesome\scss\_spinning.scss" />
+    <Content Include="fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="fonts\font-awesome\scss\_variables.scss" />
+    <EntityDeploy Include="Models\SnatoursModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SnatoursModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SnatoursModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SnatoursModel.edmx</DependentUpon>
+      <LastGenOutput>SnatoursModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SnatoursModel.edmx.diagram">
+      <DependentUpon>SnatoursModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\SnatoursModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SnatoursModel.edmx</DependentUpon>
+      <LastGenOutput>SnatoursModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\snatours.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\collapser.js" />
+    <Content Include="Scripts\js\contact_form.js" />
+    <Content Include="Scripts\js\easing.js" />
+    <Content Include="Scripts\js\isotope\css\style.css" />
+    <Content Include="Scripts\js\isotope\jquery.isotope.js" />
+    <Content Include="Scripts\js\isotope\jquery.isotope.min.js" />
+    <Content Include="Scripts\js\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\js\jquery.ui.totop.js" />
+    <Content Include="Scripts\js\modernizr.custom.48287.js" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\loader.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\sprite.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\js\prettyPhoto_3.1.5\prettyPhoto.css" />
+    <Content Include="Scripts\js\restart_theme.js" />
+    <Content Include="Scripts\js\snap.svg-min.js" />
+    <Content Include="Scripts\js\woothemes-FlexSlider-06b12f8\flexslider.css" />
+    <Content Include="Scripts\js\woothemes-FlexSlider-06b12f8\flexslider_original.css" />
+    <Content Include="Scripts\js\woothemes-FlexSlider-06b12f8\images\bg_direction_nav.png" />
+    <Content Include="Scripts\js\woothemes-FlexSlider-06b12f8\images\luna-controls.png" />
+    <Content Include="Scripts\js\woothemes-FlexSlider-06b12f8\jquery.flexslider-min.js" />
+    <Content Include="Scripts\js\woothemes-FlexSlider-06b12f8\jquery.flexslider.js" />
+    <Content Include="Scripts\js\wow.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="twitter-bootstrap\admin\css\bootstrap.min.css" />
+    <Content Include="twitter-bootstrap\admin\css\styles.css" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="twitter-bootstrap\admin\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="twitter-bootstrap\css\bootstrap-theme.css" />
+    <Content Include="twitter-bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="twitter-bootstrap\css\bootstrap.css" />
+    <Content Include="twitter-bootstrap\css\bootstrap.min.css" />
+    <Content Include="twitter-bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="twitter-bootstrap\js\bootstrap.js" />
+    <Content Include="twitter-bootstrap\js\bootstrap.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="twitter-bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="twitter-bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="twitter-bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="twitter-bootstrap\less\alerts.less" />
+    <Content Include="twitter-bootstrap\less\badges.less" />
+    <Content Include="twitter-bootstrap\less\bootstrap.less" />
+    <Content Include="twitter-bootstrap\less\breadcrumbs.less" />
+    <Content Include="twitter-bootstrap\less\button-groups.less" />
+    <Content Include="twitter-bootstrap\less\buttons.less" />
+    <Content Include="twitter-bootstrap\less\carousel.less" />
+    <Content Include="twitter-bootstrap\less\close.less" />
+    <Content Include="twitter-bootstrap\less\code.less" />
+    <Content Include="twitter-bootstrap\less\component-animations.less" />
+    <Content Include="twitter-bootstrap\less\dropdowns.less" />
+    <Content Include="twitter-bootstrap\less\forms.less" />
+    <Content Include="twitter-bootstrap\less\glyphicons.less" />
+    <Content Include="twitter-bootstrap\less\grid.less" />
+    <Content Include="twitter-bootstrap\less\input-groups.less" />
+    <Content Include="twitter-bootstrap\less\jumbotron.less" />
+    <Content Include="twitter-bootstrap\less\labels.less" />
+    <Content Include="twitter-bootstrap\less\list-group.less" />
+    <Content Include="twitter-bootstrap\less\media.less" />
+    <Content Include="twitter-bootstrap\less\mixins.less" />
+    <Content Include="twitter-bootstrap\less\modals.less" />
+    <Content Include="twitter-bootstrap\less\navbar.less" />
+    <Content Include="twitter-bootstrap\less\navs.less" />
+    <Content Include="twitter-bootstrap\less\normalize.less" />
+    <Content Include="twitter-bootstrap\less\pager.less" />
+    <Content Include="twitter-bootstrap\less\pagination.less" />
+    <Content Include="twitter-bootstrap\less\panels.less" />
+    <Content Include="twitter-bootstrap\less\popovers.less" />
+    <Content Include="twitter-bootstrap\less\print.less" />
+    <Content Include="twitter-bootstrap\less\progress-bars.less" />
+    <Content Include="twitter-bootstrap\less\responsive-utilities.less" />
+    <Content Include="twitter-bootstrap\less\scaffolding.less" />
+    <Content Include="twitter-bootstrap\less\tables.less" />
+    <Content Include="twitter-bootstrap\less\theme.less" />
+    <Content Include="twitter-bootstrap\less\thumbnails.less" />
+    <Content Include="twitter-bootstrap\less\tooltip.less" />
+    <Content Include="twitter-bootstrap\less\type.less" />
+    <Content Include="twitter-bootstrap\less\utilities.less" />
+    <Content Include="twitter-bootstrap\less\variables.less" />
+    <Content Include="twitter-bootstrap\less\wells.less" />
+    <Content Include="Views\Home\Tour.cshtml" />
+    <Content Include="Views\Shared\_Admin.cshtml" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\bordered-pulled.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\core.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\fixed-width.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\font-awesome.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\icons.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\larger.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\list.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\mixins.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\path.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\rotated-flipped.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\spinning.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\stacked.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\less\variables.less" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\font-awesome.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_core.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_icons.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_larger.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_list.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_mixins.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_path.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_spinning.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_stacked.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\font-awesome\scss\_variables.scss" />
+    <Content Include="twitter-bootstrap\admin\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="twitter-bootstrap\admin\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="twitter-bootstrap\admin\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\UserAdmin\Index.cshtml" />
+    <Content Include="Views\UserAdmin\Create.cshtml" />
+    <Content Include="Views\UserAdmin\Edit.cshtml" />
+    <Content Include="Views\UserAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49275</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49275/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

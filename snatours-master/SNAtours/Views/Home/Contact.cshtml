@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+@section featuredHeader {
+    <section class="top_bar animated slideInDown">
+        <div class="container">
+            <div class="row">
+                <div class="tob_bar_left_col col-xs-12 col-sm-6 col-md-6">
+                    <ul class="top_menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="tob_bar_right_col col-xs-6 col-sm-6 col-md-6">
+                    <p>Call Us Toll Free! +30310 67893</p>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+
+
+<section class="hgroup">
+    <h1>Contact us</h1>
+    <h2>This is a subtitle used optionally for explaining more...</h2>
+    <ul class="breadcrumb pull-right">
+        <li><a href="index.html">Home</a> </li>
+        <li class="active">Contact</li>
+    </ul>
+</section>
+<section>
+    <div class="row">
+        <div class="office_address col-sm-4 col-md-4">
+            <div class="team_member">
+                <img src="~/images/snatours_logo.png" width="150"  alt="logo">
+               
+                <br/><br/>
+                <div class="team_social"> <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/leonartgr"><i class="fa fa-twitter"></i></a> <a href="#pinterest"><i class="fa fa-linkedin"></i></a> <a href="https://github.com/PlethoraThemes"><i class="fa fa-github-alt"></i></a> </div>
+                <address>
+                    <strong></strong><br>
+                    Suite 107, Level 1, 4 - 10 Goulburn Street,<br/>
+                    Sydney, NSW 2000<br/>
+                    <abbr title="Phone">P:</abbr> (+61) 2 9264 4040
+                </address>
+                <address>
+                    <abbr title="Phone">E:</abbr> <a href="mailto:enquire@snatours.com">enquire@snatours.com</a>
+                </address>
+            </div>
+        </div>
+        <div class="contact_form col-sm-8 col-md-8">
+            <form name="contact_form" id="contact_form" method="post">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <label>Name</label>
+                        <input name="name" id="name" class="form-control" type="text" value="">
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <label>E-mail</label>
+                        <input name="email" id="email" class="form-control" type="text" value="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <label>Subject</label>
+                        <input name="subject" id="subject" class="form-control" type="text">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <label>Message</label>
+                        <textarea name="message" id="message" rows="8" class="form-control"></textarea>
+                    </div>
+                    <div class="col-sm-12 col-md-12">
+                        <br />
+                        <a id="submit_btn" class="btn btn-primary" name="submit">Submit Message</a> <span id="notice" class="alert alert-warning alert-dismissable hidden" style="margin-left:20px;"></span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
